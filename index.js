@@ -13,12 +13,13 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 /**
  * Routes Definitions
  */
 app.get("/", (req, res) => {
-    res.status(200).send("WHATABYTE: Food For Devs");
+    res.render("index", { title: "Home" });
   });
 /**
  * Server Activation
